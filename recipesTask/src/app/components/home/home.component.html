@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row mt-3">
+        <div *ngFor="let recipe of recipes" class="col-md-4 mb-4">
+          <div class="card" >
+            <img [src]="recipe.image" alt="{{ recipe.title }}" class="card-img" (click)="goToRecipeDetails(recipe.id)"> 
+            <div class="card-body">
+              <div class="card-title">{{ recipe.title }}</div>
+              <p class="card-summary" [innerHTML]="recipe.summary"></p>
+              <hr class="mt-4"/>
+              <div class="time-servings">
+                <i class="fa-regular fa-clock  me-1"></i><span>{{recipe.readyInMinutes}} mins</span>
+                <i class="fa-regular fa-thumbs-up me-1 ms-3" ></i><span>{{recipe.servings}} </span>
+              </div>
+             
+            </div>
+          </div>
+        </div>
+      </div>
+                
+           
+           
+   
+      
+      <div *ngIf="totalResults > resultsPerPage" class="d-flex justify-content-center">
+        
+          <div *ngFor="let page of getPages()">
+            <div class="p-3 pagination-style" (click)="onPageChange(page)">{{ page }}</div>
+          </div>
+        
+      </div>
+</div>

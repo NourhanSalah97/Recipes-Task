@@ -1,0 +1,38 @@
+.recipe-img{
+    border-radius: 20px;
+}
+.recipe-title{
+    font-family: var(--second-font);
+    font-size: 25px;
+    font-weight: 600;
+}
+.recipe-price{
+    font-family: var(--second-font);
+    font-size: 20px;
+    font-weight: 500;
+    color:var(--first-color); 
+    .per-color{
+        color:var(--fourth-color);
+    }
+}
+.recipe-summary{
+    text-align: justify;
+    font-size: 15px;
+    font-family: var(--first-font);
+}
+.ingredient-title{
+    font-family: var(--second-font);
+    font-size: 20px;
+
+}
+.ingredient{
+    background-color: var(--first-color);
+    color: var(--second-color);
+    font-family: var(--first-font);
+    border-radius: 8px;
+    padding: 7px;
+    white-space: nowrap;
+    width: 135px;
+    text-align: center;
+    font-size: 14px;
+}

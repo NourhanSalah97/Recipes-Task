@@ -1,0 +1,37 @@
+
+.card{
+    border:1px solid var(--first-color);
+    border-radius: 15px;
+    padding: 5px;
+    
+    font-family: var(--first-font);
+    .card-img{
+        cursor: pointer;
+    }
+    .card-title{
+    
+    font-size: 16px;
+    font-weight: 600;
+    height: 45px;
+    color: var(--first-color);
+}
+.card-summary{
+    color: var(--fourth-color);
+    font-size: 14px;
+    line-height: 1.2em;
+    max-height: 3.6em; 
+    overflow: hidden;
+}
+.time-servings{
+    color:var(--first-color);
+   
+}
+
+}
+.pagination-style{
+    font-size: 22px;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--first-color);
+
+}

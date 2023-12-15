@@ -1,0 +1,23 @@
+<div class="container mt-3">
+    <div *ngIf="recipe">
+        <div class="row d-flex justify-content-between">
+            <div class="col-6 "><img [src]="recipe.image" class="recipe-img" alt="{{ recipe.title }}" /></div>
+            <div class="col-6">
+                <div class="recipe-title">{{ recipe.title }}</div>
+                <div class="recipe-price"> ${{recipe.pricePerServing}}<span class="per-color">/per serving</span></div>
+                <p class="recipe-summary" [innerHTML]="recipe.summary"></p>
+                <div class="ingredient-title">Ingredients</div>
+                <div class="row">
+                    <div *ngFor="let ingredient of recipe.extendedIngredients" class="col-3">
+                        <div class="ingredient">{{ingredient.name}}</div>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+        
+        
+        
+      </div>
+</div>
+
