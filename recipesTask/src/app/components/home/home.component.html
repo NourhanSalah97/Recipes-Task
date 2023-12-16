@@ -1,7 +1,18 @@
+<app-header (searchEvent)="onSearch($event)"></app-header>
+
 <div class="container">
     <div class="row mt-3">
-        <div *ngFor="let recipe of recipes" class="col-md-4 mb-4">
+        <div *ngFor="let recipe of filteredRecipes" class="col-md-4 mb-4">
           <div class="card" >
+            <div class="fav-icon" >
+                <a (click)="toggleFavorite(recipe)">
+          
+                    <svg width="20" height="20" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path [ngStyle]="{ fill:isFavorite(recipe)? '#f07d21' : 'white' }"
+                      d="M14.0322 29.3432L14.0315 29.3425C9.90212 25.2613 6.51283 21.9112 4.14991 18.7626C1.79368 15.6228 0.5 12.7365 0.5 9.59128C0.5 4.45491 4.1878 0.5 8.8 0.5C11.4158 0.5 13.9476 1.82994 15.606 3.95252L16 4.45681L16.394 3.95252C18.0524 1.82994 20.5842 0.5 23.2 0.5C27.8122 0.5 31.5 4.45491 31.5 9.59128C31.5 12.7365 30.2063 15.6228 27.85 18.7649C25.4943 21.906 22.1188 25.2493 18.0068 29.322L17.9692 29.3593L17.9681 29.3603L16.0013 31.297L14.0322 29.3432Z" fill="white" stroke="#504949"/>
+                      </svg>
+                  </a>
+                </div>
             <img [src]="recipe.image" alt="{{ recipe.title }}" class="card-img" (click)="goToRecipeDetails(recipe.id)"> 
             <div class="card-body">
               <div class="card-title">{{ recipe.title }}</div>

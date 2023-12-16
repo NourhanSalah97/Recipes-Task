@@ -13,6 +13,7 @@
     font-size: 16px;
     font-weight: 600;
     height: 45px;
+    overflow: hidden;
     color: var(--first-color);
 }
 .card-summary{
@@ -26,7 +27,20 @@
     color:var(--first-color);
    
 }
-
+.fav-icon{
+    position: absolute;
+    top: 17px;
+    right: 16px;
+    z-index: 1000;
+    background-color: white;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  }
 }
 .pagination-style{
     font-size: 22px;

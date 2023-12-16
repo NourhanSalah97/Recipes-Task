@@ -7,14 +7,13 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ApiService {
-  private apiUrl = 'https://api.spoonacular.com/recipes/complexSearch';
-  private apiKey = 'ab9a1e9e7a8b420ea128952844ce160d';
+  private apiUrl = 'https://api.spoonacular.com/recipes/random';
+  private apiKey = 'f99db906158f4720acafefc139666c1d';
 
   constructor(private http: HttpClient) {}
 
-  getRecipes(cuisine: string, diet: string, number: number, offset: number): Observable<any> {
+  getRecipes( diet: string, number: number, offset: number): Observable<any> {
     const params = {
-      cuisine,
       diet,
       apiKey: this.apiKey,
       number: number.toString(),
@@ -24,5 +23,8 @@ export class ApiService {
 
     return this.http.get(this.apiUrl, { params });
   }
-  
+  getRandomRecipes(pageNumber: number = 1, recipesPerPage: number = 9): Observable<any> {
+    const url = `${this.apiUrl}?apiKey=${this.apiKey}&number=${recipesPerPage}`;
+    return this.http.get(url);
+  }
 }

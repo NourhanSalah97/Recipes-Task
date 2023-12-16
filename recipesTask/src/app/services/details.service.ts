@@ -12,7 +12,7 @@ export class DetailsService {
   constructor(private http: HttpClient) {}
 
   getRecipeDetails(recipeId: number): Observable<any> {
-    const apiKey = 'ab9a1e9e7a8b420ea128952844ce160d'; 
+    const apiKey = 'f99db906158f4720acafefc139666c1d'; 
     const url = `${this.apiUrl}/${recipeId}/information`;
 
     return this.http.get(url, { params: { apiKey } });
